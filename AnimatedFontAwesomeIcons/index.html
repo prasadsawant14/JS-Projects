@@ -1,0 +1,99 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Ani-Icons</title>
+
+    <style>
+      #chain, #battery,#hrglass{
+        font-size: 50px;
+      }
+
+    </style>
+
+  </head>
+  <body>
+      <div id="chain" class="fa">
+
+      </div>
+
+      <br><br>
+      <div id="battery" class="fa">
+
+      </div>
+      <br><br>
+      <div id="hrglass" class="fa">
+
+      </div>
+
+
+    <script>
+        // break chain animation
+      function breakChain(){
+        let chain = document.getElementById('chain');
+        chain.innerHTML = "&#xf0c1;";
+
+        setTimeout(function(){
+            chain.innerHTML = "&#xf127;";
+          }, 1000);
+      }
+        // call animation
+      breakChain();
+      // break every 2 seconds
+      setInterval(breakChain, 2000);
+
+
+    // battery charge animation
+        function chargeBattery(){
+          let battery = document.getElementById('battery');
+          battery.innerHTML = "&#xf244;";
+
+
+        //run animation
+        setTimeout(function(){
+          battery.innerHTML = "&#xf243;";
+        }, 1000);
+        setTimeout(function(){
+          battery.innerHTML = "&#xf242;";
+        }, 2000);
+        setTimeout(function(){
+          battery.innerHTML = "&#xf241;";
+        }, 3000);
+        setTimeout(function(){
+          battery.innerHTML = "&#xf240;";
+        }, 4000);
+}
+
+
+        chargeBattery();
+
+        // run every 5 secs
+
+        setInterval(chargeBattery, 5000);
+
+        //hrglass tip animation
+        function hrglass(){
+          let hrglass = document.getElementById('hrglass');
+          hrglass.innerHTML = "&#xf251;";
+
+          //run animation
+          setTimeout(function(){
+            hrglass.innerHTML = "&#xf252;";
+          }, 1000);
+          setTimeout(function(){
+            hrglass.innerHTML = "&#xf253;";
+          }, 2000);
+
+        }
+
+        //run every 3 sec
+        setInterval(hrglass, 3000);
+        hrglass();
+    </script>
+
+  </body>
+  </html>

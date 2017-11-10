@@ -1,0 +1,43 @@
+body{
+	text-align: center;
+	font-family: arial;
+	font-size: 18px;
+}
+
+li{
+	list-style: none;
+	line-height: 2em;
+	text-align: left;
+}
+
+
+
+.header{
+	background: #f4f4f4;
+	border-bottom: 3px #ccc solid;
+    padding: 20px;
+}
+
+.container{
+	width: 700px;
+	margin: 30px auto;
+}
+
+.my-form{
+    font-size: 14px;
+/*    display: grid;*/
+}
+
+.form-group{
+ display: inline;
+}
+.btn{
+    margin: 20px;
+    padding: 10px;
+    background: #ccc;
+}
+
+.btn:hover{
+    background: #67b09f;
+    border-radius: 20px;
+}

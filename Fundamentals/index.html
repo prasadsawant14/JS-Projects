@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+    <title>Learning JavaScript</title>
+</head>
+
+<body  id="body" onload="showDate()">
+    <div class="header">
+        <h1 id="heading">Learnring JavaScript</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur.
+        </p>
+    </div>
+
+    <div class="container">
+
+        <!--		<button onclick="changeText(this)">Click me!</button>-->
+        <!--		ANOTHER WAY BUT NO PREFERRED <button onclick="this.innerHTML = 'U clicked'">Click me!</button>-->
+        <button onmouseout="clearDate()" onmouseover="showDate()">Show Date</button>
+        <h1 id="time"> </h1>
+    </div>
+    
+    
+    <div class="container">
+        <form  class="my-form" action="something.php" name="myForm" method="post" onsubmit="return validateForm()">
+        <div class="form-group">
+            <label >Name :</label>
+        <input type="text" id="firstName">
+        </div>
+        
+        <div class="form-group">
+            <label >Age :</label>
+        <input type="text" id="lastName">
+        </div>
+        
+        <br>
+<!--
+        <div class="form-group">
+            <label >Background :</label>
+                <select name="background" id="background" onchange="changeBG(this)">
+                 <option value="red">Red</option>   
+                 <option value="blue">Blue</option>
+                 <option value="green">Green</option>                 </select>
+        </div>
+-->
+           <div class="form-group">
+               <button class="btn">Submit</button>
+           </div>
+    </form>
+    </div>
+
+    <script>
+        ////    VARIABLES  can contain
+        ////            letters, numbers, underscores ,dollar signs
+        ////            should begin with a letter ,dolllar or            underscores
+        ////            case sensitive
+        //            
+        ////            camel case myName
+        ////            partial case MyName
+        ////            underscore my_name
+        //            
+        ////            ***************
+        //            
+        ////            ARRAYS
+        ////            definition of array initilization
+        ////            METHOD 1
+        //            var colors =['red', 'blue', 'green']; 
+        ////            METHOD 2
+        //            var colors = new Array('red', 'blue', 'green');
+        ////            inserting values
+        //            colors[3] = 'yellow';
+        ////            since we won't always be knowing the position gor inserting we use push
+        //            colors.push('yellow');
+        ////            arrays of Number
+        //            var num =[5. 4, 3, 2, 'seven'];
+        //            
+        ////            length push sort reverse
+        //            
+        ////             **********************
+        //            
+        ////            LOOPS
+        //            
+        ////            for while foreach
+        //            var number =[5. 4, 3, 2, 'seven'];
+        //            
+        //            number.forEach(function(num)){
+        ////                        stuff
+        //                        }
+        //                           
+        ////                ****************************
+        //            
+        ////            CONDITIONALS
+        //                           
+        //                if switch
+        ////            OBJECT LITERAL
+        //                            
+        //            var person = {
+        //                           firstName : 'brad',
+        //                           lastName : 'read',
+        //                           age : 34,
+        //                           children: ['alex', 'joanna'],
+        //
+        //                           address ={
+        //                           street : 'dfdffsf',
+        //                           city : 'vfg',
+        //                           state : 'ma'
+        //                           },
+        //                           
+        //                           fullName function(){
+        //                return this.firstName +" "+thi.lastName;
+        //            }
+        //                           
+        //                           
+        //                           }
+        //                           
+        ////                           OBJECT CONSTRUCTOR
+        //                           var apple = new Object();
+        //            apple.color = 'red';
+        //            apple.shape = 'round';
+        //            
+        //            apple.describe = function(){
+        //                return 'apple is'+ this.color + 'in color & '+ this.shape +' in shape' ;
+        //            }
+        //            
+        ////            CONSTRUCTOR PATTERN
+        //            function Fruit(name, color, shape){
+        //                this.name = name;
+        //                this.shape = shape;
+        //                this.color = color;
+        //                
+        //                this.describe = function(){
+        //                    return 'fruit is ' + this.name +
+        //                        'color is' + this.color +
+        //                        'shape is' + this.shape ;
+        //                }
+        //            }
+        //            
+        //            var apple = new Fruit('apple','red','round');
+        //            var melon =new Fruit('melon','green','round');
+        //            
+        //            console.log(melon.describe());
+        //         
+        //                           
+        //            console.log(person.firstName);
+        //            console.log(person.children[1]);
+        //            console.log(person.address);
+        //            console.log(person.address.state);
+        //            console.log(person fullName());
+        //            
+        //            
+        ////            ARRAYS OF OBJECTS
+        //            
+        //            var users =[
+        //               { name : 'abc',
+        //                age :20
+        //               }
+        //                ,
+        //                { name : 'abc',
+        //                age :20
+        //               },
+        //                { name : 'abc',
+        //                age :20
+        //               }
+        //        ]
+
+        //EVENTS
+        //            function doClick(){
+        //                alert('U Clicked');
+        //            }
+        //            
+        //            function changeText (id){
+        //                id.innerHTML = 'You Clicked' ;
+        //            }
+
+        //            function changeHTMLText(){
+        //               var heading =  document.getElementById('heading') ;
+        //                heading.innerHTML = "You Clicked" ;
+        //            }
+//        function showDate() {
+//            var time = document.getElementById('time');
+//            time.innerHTML = Date();
+//        }
+//
+//        function clearDate() {
+//            var time = document.getElementById('time');
+//            time.innerHTML = "";
+//        }
+//        
+//        function changeBG(x){
+//         var heading= document.getElementById('heading');
+//            
+//          heading.style.color = x.value;  
+//        }
+        function validateForm(){
+            var firstName = document.forms["myForm"]["firstName"].value;
+            
+            if(firstName == null || firstName == ""){
+                alert("name is required");
+                return false;
+            }
+            
+            if(firstName.length < 3){
+                alert("name must be atleast 3 characters");
+                return false;
+            }
+            
+            
+        }
+        
+
+    </script>
+</body>
+
+</html>
